@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+
+<!-- 🔄 Loading Animation -->
+<div id="loadingScreen" class="fixed inset-0 bg-white z-50 flex flex-col justify-center items-center text-center">
+  <img src="{{ url_for('static', filename='img/brain.png.gif') }}" class="h-20 animate-bounce-slow mb-4" alt="Loading">
+  <h2 class="text-xl font-semibold text-indigo-600 animate-pulse">Model is evaluating responses...</h2>
+</div>
+
+<!-- ✅ Result Content (hidden at first) -->
+<div id="resultBox" class="hidden max-w-xl mx-auto bg-white shadow-xl rounded-2xl p-8 text-center border-t-4 border-indigo-500">
+
+  <h2 class="text-3xl font-bold text-indigo-700 mb-6">Prediction Result</h2>
+
+  <div class="space-y-2 text-left">
+    <p><strong>👤 Parent Name:</strong> {{ parent_name }}</p>
+    <p><strong>🧒 Child Name:</strong> {{ child_name }}</p>
+    <p><strong>🧠 Confidence:</strong> {{ confidence }}%</p>
+  </div>
+
+  <!-- Result Badge -->
+  <div class="mt-6">
+    {% if result == "Likely Autistic" %}
+      <span class="inline-block bg-red-100 text-red-700 px-6 py-2 rounded-full text-lg font-semibold shadow">
+        High Risk of Autism
+      </span>
+    {% else %}
+      <span class="inline-block bg-green-100 text-green-700 px-6 py-2 rounded-full text-lg font-semibold shadow">
+        Low Risk of Autism
+      </span>
+    {% endif %}
+  </div>
+
+  <!-- Suggestion -->
+  <div class="mt-6 text-left text-gray-700 bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-lg">
+    <p class="font-semibold text-indigo-800 mb-1">Suggestion:</p>
+    <em>{{ suggestion }}</em>
+  </div>
+
+  <!-- Buttons -->
+  <div class="mt-8 flex flex-col md:flex-row justify-center gap-4">
+    <a href="/download_pdf" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg shadow transition">
+      📥 Download PDF Report
+    </a>
+    <a href="/form" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold px-6 py-3 rounded-lg transition">
+      🔄 Retake Assessment
+    </a>
+  </div>
+
+</div>
+
+<!-- 🔧 Animation Script -->
+<style>
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
+</style>
+
+<script>
+  window.addEventListener('load', function () {
+    setTimeout(() => {
+      document.getElementById("loadingScreen").style.display = "none";
+      document.getElementById("resultBox").classList.remove("hidden");
+    }, 1500);  // 1.5 seconds delay
+  });
+</script>
+
+{% endblock %}

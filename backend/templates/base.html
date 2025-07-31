@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}Autism Detection{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-xl font-bold text-indigo-600">AutismScreen</a>
+      <div class="space-x-6">
+        <a href="/" class="hover:text-indigo-600">Home</a>
+        <a href="/form" class="hover:text-indigo-600">Assessment</a>
+        <a href="/about" class="hover:text-indigo-600">About</a>
+        <a href="/faq" class="hover:text-indigo-600">FAQ</a>
+        <a href="/privacy" class="hover:text-indigo-600">Privacy</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="min-h-screen px-4 py-10">
+    {% block content %}{% endblock %}
+  </main>
+
+</body>
+</html>
