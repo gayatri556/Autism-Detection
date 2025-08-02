@@ -22,15 +22,28 @@ This project is a web-based application designed to assist in the preliminary sc
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/autism-screening-app.git
-## 📸 Project Screenshot
+## 📸 Project Screenshots
 
-![Screenshot](backend/static/images/screenshot1.png)
-![Screenshot](images/screenshot2.png)
-![Screenshot](images/screenshot3.png)
-![Screenshot](images/screenshot4.png)
-![Screenshot](images/screenshot5.png)
-![Screenshot](images/screenshot6.png)
-![Screenshot](images/screenshot7.png)
+### 🏠 Home Page
+![Screenshot1](images/Screenshot1.png)
+
+### 📝 Questionnaire Page
+![Screenshot2](images/Screenshot2.png)
+
+### ✅ Submission Confirmation
+![Screenshot3](images/Screenshot3.png)
+
+### 📊 Prediction Result
+![Screenshot4](images/Screenshot4.png)
+
+### 👨‍👩‍👧 Caregiver Suggestions
+![Screenshot5](images/Screenshot5.png)
+
+### 🔐 Secure Data Storage
+![Screenshot6](images/Screenshot6.png)
+
+### 🧠 Model Prediction Internals
+![Screenshot7](images/Screenshot7.png)
 
 
 
