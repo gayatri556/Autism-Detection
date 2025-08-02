@@ -22,7 +22,15 @@ This project is a web-based application designed to assist in the preliminary sc
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/autism-screening-app.git
+## 📸 Project Screenshot
 
+![Screenshot](images/screenshot1.png)
+![Screenshot](images/screenshot2.png)
+![Screenshot](images/screenshot3.png)
+![Screenshot](images/screenshot4.png)
+![Screenshot](images/screenshot5.png)
+![Screenshot](images/screenshot6.png)
+![Screenshot](images/screenshot7.png)
 
 
 
